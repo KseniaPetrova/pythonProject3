@@ -15,10 +15,13 @@
 
 string = 'это моя строка'
 stringNew = 'это новая строка'
-print('1. ' + string[0])
-print('2. ' + string[-1])
-print('3. ' + string[2:5])
-print('4. ' + string[::-1])
-print('5. ' + str(len(string)))
-print('6. ' + stringNew + ' ' + string)
+print('1. ' + string[0])  # э
+print('2. ' + string[-1])  # а
+print('3. ' + string[2:5])  # о м
+print('4. ' + string[::-1])  # акортс яом отэ
+print('5. ' + str(len(string)))  # 14
+print('6. ' + stringNew + ' ' + string)  # это новая строка это моя строка
+
+# test
+print(string[:-1])  # это моя строк
 
