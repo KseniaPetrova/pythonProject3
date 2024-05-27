@@ -31,12 +31,12 @@ print(result3)
 В случае передачи аргумента со значением 0 или меньше, будет возвращаться пустой список.
 """
 
-# list_ = [[10]*3]*2  # [[10, 10, 10], [10, 10, 10]]
-# print(list_)
-
 def get_matrix (n, m, value):
-    matrix = [[value]*n]*m
-    return matrix
+    matrix = []
+    for i in range(n):
+        for j in range(m):
+            matrix = [[value]*m]*n
+            return matrix
 
 result1 = get_matrix(2, 2, 10)
 result2 = get_matrix(3, 5, 42)
@@ -45,3 +45,17 @@ result3 = get_matrix(4, 2, 13)
 print(result1)
 print(result2)
 print(result3)
+
+
+# Изначально решила так, потому что забыла пр циклы
+# def get_matrix (n, m, value):
+#     matrix = [[value]*n]*m
+#     return matrix
+#
+# result1 = get_matrix(2, 2, 10)
+# result2 = get_matrix(3, 5, 42)
+# result3 = get_matrix(4, 2, 13)
+#
+# print(result1)
+# print(result2)
+# print(result3)
