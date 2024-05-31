@@ -16,7 +16,7 @@
   - Выведите на экран измененный список mutable_list.
 '''
 
-immutable_var = 9, 'str', False, [5, 6]
+immutable_var = 9, 'str', False, [5, 6]  # кортеж
 print(immutable_var)
 # immutable_var[0] = 1  не сработает потому что int неизменяемый тип
 # immutable_var[1] = 'int' не сработает потому что str неизменяемый тип
@@ -25,9 +25,9 @@ immutable_var[3][1] = 9  # сработает потому что внутрен
 #tuple_4[3] = [4, 6, 0]  не сработает потому что элементы кортежа неизменяемы
 #immutable_var[1:3] = 1, 99 не сработает замена через срез, потомы что объекты внутри кортежа неизменяемы
 
-mutable_list = [3, 'int', True, [1, 2]]
-mutable_list [0] = [4,5]
-mutable_list [1] = False
+mutable_list = [3, 'int', True, [1, 2]]  # [3, 'int', True, [1, 2]]
+mutable_list [0] = [4,5]  # [[4, 5], 'int', True, [1, 2]]
+mutable_list [1] = False  # [[4, 5], False, True, [1, 2]]
 mutable_list [2] = 'str'
 mutable_list [3] = 0
 mutable_list [0][0] = 9

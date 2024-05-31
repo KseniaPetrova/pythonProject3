@@ -19,7 +19,7 @@
 print('Работа со списками:')
 my_list = ['apple', 'coconut', 'banana', 'peach']
 print(my_list)
-print('Первый элемент:', my_list[0], '. Второй элемент:', my_list[len(my_list)-1])
+print('Первый элемент:', my_list[0], '. Второй элемент:', my_list[-1])
 my_list[2] = 'pomegranate'
 print(my_list)
 
