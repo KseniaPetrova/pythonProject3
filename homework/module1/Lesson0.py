@@ -33,5 +33,16 @@
 #         list_9.append([element])
 # print(list_9)
 
-list_te = [[[1, 5]],[[3, 4, 2]], 8]
-print(list_te[1][0][2])
+# list_te = [1, 5, 3, 4, 2, 8]
+# print(sum(list_te))
+
+def fac(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fac(n-1)
+
+
+print(fac(5))
+f = 5 * 4 * 3 * 2 * 1 * 5
+print(f)

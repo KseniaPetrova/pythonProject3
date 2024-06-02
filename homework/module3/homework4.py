@@ -1,7 +1,9 @@
 """
 Задание "Раз, два, три, четыре, пять .... Это не всё?":
-Все ученики урбана, без исключения, - очень умные ребята. Настолько умные, что иногда по утру сами путаются в том, что намудрили вчера вечером.
-Один из таких учеников уснул на клавиатуре в процессе упорной учёбы (ещё и трудолюбивые). Тем не менее, даже после сна, его код остался рабочим и выглядел следующим образом:
+Все ученики урбана, без исключения, - очень умные ребята. Настолько умные, что иногда по утру сами путаются в том, что
+намудрили вчера вечером.
+Один из таких учеников уснул на клавиатуре в процессе упорной учёбы (ещё и трудолюбивые). Тем не менее, даже после сна,
+его код остался рабочим и выглядел следующим образом:
 
 data_structure = [
     [1, 2, 3],
@@ -56,3 +58,87 @@ data_structure = [
     "Hello",
     ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
+
+'''
+list1 = [1, 2, 3]
+dict2 = {'a': 4, 'b': 5}
+tuple3 = (6, {'cube': 7, 'drum': 8})
+str4 = 'Hello'
+tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
+'''
+# for i in list1:
+#     if type(i) is int:
+#         sum_ += i
+#     if isinstance(i, str):
+#         sum_ += len(i)
+# print(sum_)
+
+# for i in dict2:
+#     if isinstance(i, str):
+#         key = len(i)
+#         sum_ += key
+#     if isinstance(i, int):
+#         sum_ += i
+#     value = dict2.get(i)
+#     if isinstance(value, str):
+#         value = len(value)
+#         sum_ += value
+#     if isinstance(value, int):
+#         sum_ += value
+# print('dict2', sum_)
+
+# for i in tuple3:
+#     if type(i) is int:
+#         sum_ += i
+#     if isinstance(i, str):
+#         sum_ += len(i)
+#     if isinstance(i, dict):
+#         for j in i:
+#             if isinstance(j, str):
+#                 key = len(j)
+#                 sum_ += key
+#             if isinstance(j, int):
+#                 sum_ += j
+#             value = i.get(j)
+#             if isinstance(value, str):
+#                 value = len(value)
+#                 sum_ += value
+#             if isinstance(value, int):
+#                 sum_ += value
+# print('tuple3', sum_)
+
+# for i in str4:
+#     if isinstance(i, str):
+#         sum_ += len(i)
+# print(sum_)
+tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
+# for i in tuple5:
+#     while type(i) is list or tuple or set or dict:
+#         if type(i) is list:
+
+
+sum_ = 0
+
+
+def calculate_structure_sum(*args):
+
+    if isinstance(args, (list, dict, tuple, set)):
+        for i in args:
+            first = i
+            return calculate_structure_sum(i)
+    sum_list = []
+    if isinstance(args, str):
+        sum_list.append(len(args))
+    if isinstance(args, int):
+        sum_list.append(args)
+    return print(sum(sum_list))
+
+
+res = calculate_structure_sum(data_structure)
+print(res)
+# <class 'list'>
+# <class 'dict'>
+# <class 'tuple'>
+# <class 'str'>
+# <class 'tuple'>
+
