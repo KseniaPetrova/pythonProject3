@@ -59,13 +59,42 @@ data_structure = [
     ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
+test1 = {'cube': 7, 'drum': 8, 4: [1, 2, 3]}
+
+
+def calculate_structure_sum(*args):
+    sum_list = []
+    for item in args:
+        if isinstance(item, (list, tuple, set)):
+            for sub_item in item:
+                sum_list.append(calculate_structure_sum(sub_item))
+        if isinstance(item, dict):
+            for sub_item in item:
+                sum_list.append(calculate_structure_sum(item.get(sub_item)))
+                sum_list.append(calculate_structure_sum(sub_item))
+        if isinstance(item, str):
+            sum_list.append(len(item))
+        if isinstance(item, int):
+            sum_list.append(item)
+    return sum(sum_list)
+
+
+res = calculate_structure_sum(data_structure)
+res2 = calculate_structure_sum(test1)
+print(res)
+print(res2)
+
 '''
-list1 = [1, 2, 3]
-dict2 = {'a': 4, 'b': 5}
-tuple3 = (6, {'cube': 7, 'drum': 8})
-str4 = 'Hello'
-tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
+Ниже рассуждения о решении
 '''
+# list1 = [1, 2, 3]
+# dict2 = {'a': 4, 'b': 5}
+# tuple3 = (6, {'cube': 7, 'drum': 8})
+# str4 = 'Hello'
+# tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
+
+# sum_ = 0
+
 # for i in list1:
 #     if type(i) is int:
 #         sum_ += i
@@ -87,7 +116,9 @@ tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
 #         sum_ += value
 # print('dict2', sum_)
 
+# tuple3 = (6, {'cube': 7, 'drum': 8})
 # for i in tuple3:
+#
 #     if type(i) is int:
 #         sum_ += i
 #     if isinstance(i, str):
@@ -111,31 +142,12 @@ tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
 #     if isinstance(i, str):
 #         sum_ += len(i)
 # print(sum_)
-tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
+
+# tuple5 = ((), [{(2, 'Urban', ('Urban2', 35))}])
 # for i in tuple5:
 #     while type(i) is list or tuple or set or dict:
 #         if type(i) is list:
 
-
-sum_ = 0
-
-
-def calculate_structure_sum(*args):
-
-    if isinstance(args, (list, dict, tuple, set)):
-        for i in args:
-            first = i
-            return calculate_structure_sum(i)
-    sum_list = []
-    if isinstance(args, str):
-        sum_list.append(len(args))
-    if isinstance(args, int):
-        sum_list.append(args)
-    return print(sum(sum_list))
-
-
-res = calculate_structure_sum(data_structure)
-print(res)
 # <class 'list'>
 # <class 'dict'>
 # <class 'tuple'>
